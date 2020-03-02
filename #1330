@@ -1,0 +1,19 @@
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        String str=sc.next();
+        String str1=sc.next();
+        int a=Integer.parseInt(str);
+        int b=Integer.parseInt(str1);
+        if(a>b){
+            System.out.println(">");
+        }
+        else if(a==b){
+            System.out.println("==");
+        }
+        else 
+            System.out.println("<");
+            
+    }
+}
