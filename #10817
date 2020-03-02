@@ -1,0 +1,36 @@
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        String str=sc.next();
+        String str1=sc.next();
+        String str2=sc.next();
+        int a=Integer.parseInt(str);
+        int b=Integer.parseInt(str1);
+        int c=Integer.parseInt(str2);
+        int answer;
+        if(a<=b){
+            if(b<c){
+                System.out.println(b);
+            }
+            else {
+                if(a<c){
+                    System.out.println(c);
+                }
+                else
+                    System.out.println(a);
+            }
+        }
+        else {
+            if(b<c){
+                if(a<c){
+                    System.out.println(a);
+                }
+                else
+                    System.out.println(c);
+            }
+            else
+                System.out.println(b);
+        }
+    }
+}
