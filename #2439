@@ -1,0 +1,18 @@
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+		Scanner sc=new Scanner(System.in);
+		int n=sc.nextInt();			//n=5
+		sc.close();
+						
+		for(int i=1;i<n+1;i++) {	//1,2,3,4,5
+			for(int j=n;j>i;j--) {	//4,3,2,1,0 공백
+				System.out.print(" ");	
+			}
+			for(int k=0;k<i;k++) {
+				System.out.print("*"); //1,2.3,4.5 별
+			}
+			System.out.println();	//마지막 줄넘기기
+		}
+    }
+}
