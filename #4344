@@ -1,0 +1,27 @@
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+		Scanner sc=new Scanner(System.in);
+		int t=sc.nextInt();
+		for(int i=0;i<t;i++) {
+			int stu=sc.nextInt();
+			int[] score=new int[stu];
+			int count=0;
+			int sum=0;
+			double avg=0;
+			double man=0;
+			for(int j=0;j<score.length;j++) {
+				score[j]=sc.nextInt();
+				sum=sum+score[j];
+			}
+			avg=(double)sum/stu;
+			for(int k=0;k<score.length;k++) {
+				if(score[k]>avg) {
+					count++;
+				}
+			}
+			man=(double)100*count/stu;
+			System.out.printf("%.3f%%\n",man);
+		}
+    }
+}
