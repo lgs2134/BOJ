@@ -1,0 +1,26 @@
+public class Main {
+	public static void main(String[] args) {
+		int n;
+		boolean[] self=new boolean[10001];
+		for(int i=1;i<10001;i++) {
+			int dn=Caldn(i);
+			if(dn<=10000) {
+				self[dn]=true;
+			}
+		}
+		for(int i=1;i<self.length;i++) {
+			if(self[i]==false) {
+				System.out.println(i);
+			}
+		}
+	}
+
+private static int Caldn(int num){
+	int dn = num;
+	while(num>0) {
+		dn=dn+(num%10);
+		num=num/10;
+	}
+	return dn;
+}
+}
