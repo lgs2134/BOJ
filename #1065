@@ -1,0 +1,32 @@
+import java.util.*;
+public class Main {
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		int n=sc.nextInt();
+		sc.close();
+		int count=Cal(n);		
+		System.out.println(count);
+	}
+	public static int Cal(int n) {	
+		int count=0;
+		for(int i=1;i<(n+1);i++) {
+			if(i<100) {
+				count++;
+			}
+			else if(i<1000) {
+				int tmp=i;
+				int a1=tmp%10;
+				tmp=tmp/10;
+				int a2=tmp%10;
+				tmp=tmp/10;
+				int a3=tmp%10;
+				if((a3-a2)==(a2-a1)) {
+					count++;
+				}
+			}
+		}
+		return count;
+	}
+}
+
+
