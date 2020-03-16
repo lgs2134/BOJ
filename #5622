@@ -1,0 +1,18 @@
+import java.util.*;
+public class Main {
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		String str=sc.nextLine();
+		String[] dial= {"","ABC","DEF","GHI","JKL","MNO","PQRS","TUV","WXYZ"};
+		int time=0;
+		for(int i=0;i<str.length();i++) {
+			char tmp=str.charAt(i);
+			for(int j=0;j<dial.length;j++) {
+				if(dial[j].indexOf(tmp)>=0) {
+					time+=(j+2);
+				}
+			}
+		}
+		System.out.println(time);
+	}
+}
