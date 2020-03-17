@@ -1,0 +1,45 @@
+import java.util.*;
+public class Main {
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		String word=sc.nextLine();
+		int count=0;
+		for(int i=0;i<word.length();i++) {
+			if(word.charAt(i)=='c') {
+				if(i<word.length()-1 && (word.charAt(i+1)=='=' || word.charAt(i+1)=='-')) {
+					i++;
+				}
+			}
+			if(word.charAt(i)=='d') {
+				if(i<word.length()-2 && (word.charAt(i+1)=='z' && word.charAt(i+2)=='=')) { //+2인덱스 오류가 난당
+					i+=2;
+				}
+				if(i<word.length()-1 && word.charAt(i+1)=='-') {
+					i++;
+				}
+			}
+			if(i<word.length()-1 && word.charAt(i)=='l') {
+				if(word.charAt(i+1)=='j') {
+					i++;
+				}
+			}
+			if(i<word.length()-1 && word.charAt(i)=='n') {
+				if(word.charAt(i+1)=='j') {
+					i++;
+				}
+			}
+			if(i<word.length()-1 && word.charAt(i)=='s') {
+				if(word.charAt(i+1)=='=') {
+					i++;
+				}
+			}
+			if(i<word.length()-1 && word.charAt(i)=='z') {
+				if(word.charAt(i+1)=='=') {
+					i++;
+				}
+			}
+			count++;
+		}
+		System.out.println(count);
+	}
+}
