@@ -1,0 +1,24 @@
+import java.util.*;
+public class Main {
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		int input=sc.nextInt();
+		sc.close();
+		int result=-1;
+		int cnt=0;
+		while(true) {
+			if(input%5==0) {
+				result=(input/5)+cnt;
+				break;
+			}
+			else if(input<=0) {
+				result=-1;
+				break;
+			}
+			cnt++;
+			input-=3;
+			result=cnt;
+		}
+		System.out.println(result);
+	}
+}
