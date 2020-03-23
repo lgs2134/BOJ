@@ -1,0 +1,30 @@
+import java.util.*;
+public class Main {
+	public static void main(String[] args) { 
+		Scanner sc=new Scanner(System.in);
+		int input=sc.nextInt();
+		sc.close();
+		int down=0;
+		int up=0;
+		int an=1;
+		int n=1;
+		if(input==1) {
+			down=1;
+			up=1;
+		}
+		else {
+			while(an<=input) {	
+				an+=n;		
+				n++;	
+			}
+			down=an-input;
+			up=(n-1)+(1-down);
+		}
+        if((n)%2==0){
+            System.out.println(down+"/"+up);
+        }
+        else{
+            System.out.println(up+"/"+down);
+        }
+	}
+}
