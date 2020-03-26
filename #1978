@@ -1,0 +1,26 @@
+import java.util.*;
+public class Main {
+	public static void main(String[] args) { 
+		Scanner sc=new Scanner(System.in);
+		int n=sc.nextInt();
+		int cnt=0;
+		int[] a=new int[n];
+		for(int i=0;i<a.length;i++) {
+			a[i]=sc.nextInt();
+			boolean chk=false;
+			if(a[i]==1) {
+				chk=true;
+			}
+			for(int j=2;j<a[i];j++) {
+				if(a[i]%j==0) {
+					chk=true;
+					break;
+				}
+			}
+			if(chk==false) {
+				cnt++;
+			}
+		}
+		System.out.println(cnt);
+	}
+}
