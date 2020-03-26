@@ -1,0 +1,22 @@
+import java.util.*;
+public class Main {
+	public static void main(String[] args) { 
+		Scanner sc=new Scanner(System.in);
+		int m=sc.nextInt();
+		int n=sc.nextInt();
+		boolean[] primeNum=new boolean[n];
+		primeNum[0]=true;
+		for(int i=2;i<=n;i++) {
+			for(int j=2;i*j<=n;j++) {
+				primeNum[i*j-1]=true;
+			}
+		}
+		for(int i=0;i<primeNum.length;i++) {
+			if(i+1>=m && i+1<=n) {
+				if(primeNum[i]==false) {
+					System.out.println(i+1);
+				}
+			}
+		}
+	}
+}
