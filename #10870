@@ -1,0 +1,37 @@
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		Scanner sc=new Scanner(System.in);
+		int n=sc.nextInt();
+		int a1=0;
+		int a2=1;
+		int index=2;
+		
+		int result=fibonacci(a1,a2,n,index);
+		
+		System.out.println(result);
+	
+	}
+	
+	public static int fibonacci(int a1,int a2,int count,int index) {
+		int result=0;
+		result=a1+a2;
+		
+		if(count==0) {
+			result=a1;
+		}
+		else if(count==1) {
+			result=a2;
+		}
+		else if(count!=index) {
+			index++;
+			result=fibonacci(a2,result,count,index);
+		}
+
+		return result;
+	}
+
+}
