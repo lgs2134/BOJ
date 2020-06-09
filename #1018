@@ -1,0 +1,88 @@
+import java.util.*;
+
+public class Main {
+
+	public static void main(String[] args) {
+
+		Scanner sc = new Scanner(System.in);
+
+		char[][] white = { 
+				{ 'W', 'B', 'W', 'B', 'W', 'B', 'W', 'B' }, 
+				{ 'B', 'W', 'B', 'W', 'B', 'W', 'B', 'W' },
+				{ 'W', 'B', 'W', 'B', 'W', 'B', 'W', 'B' }, 
+				{ 'B', 'W', 'B', 'W', 'B', 'W', 'B', 'W' },
+				{ 'W', 'B', 'W', 'B', 'W', 'B', 'W', 'B' }, 
+				{ 'B', 'W', 'B', 'W', 'B', 'W', 'B', 'W' },
+				{ 'W', 'B', 'W', 'B', 'W', 'B', 'W', 'B' }, 
+				{ 'B', 'W', 'B', 'W', 'B', 'W', 'B', 'W' }, 
+				};
+
+		char[][] black = { 
+				{ 'B', 'W', 'B', 'W', 'B', 'W', 'B', 'W' },
+				{ 'W', 'B', 'W', 'B', 'W', 'B', 'W', 'B' }, 
+				{ 'B', 'W', 'B', 'W', 'B', 'W', 'B', 'W' },
+				{ 'W', 'B', 'W', 'B', 'W', 'B', 'W', 'B' }, 
+				{ 'B', 'W', 'B', 'W', 'B', 'W', 'B', 'W' },
+				{ 'W', 'B', 'W', 'B', 'W', 'B', 'W', 'B' }, 
+				{ 'B', 'W', 'B', 'W', 'B', 'W', 'B', 'W' },
+				{ 'W', 'B', 'W', 'B', 'W', 'B', 'W', 'B' }, 
+				};
+        
+		int n = sc.nextInt();
+		int m = sc.nextInt();
+
+		char[][] chess = new char[n][m];
+		for (int i = 0; i < chess.length; i++) {
+            String line=sc.next();
+			for (int j = 0; j < chess[i].length; j++) {
+				chess[i][j] = line.charAt(j);
+			}
+		}
+	
+		char[][] temp = new char[8][8];
+		int cntBlack = 0;
+		int cntWhite = 0;
+		int answer = Integer.MAX_VALUE;
+
+		for (int k = 0; k < chess.length - 7; k++) {
+			for (int l = 0; l < chess[k].length - 7; l++) {
+				for (int i = k; i < k+8; i++) {
+					for (int j = l; j < l+8; j++) {
+						temp[i-k][j-l] = chess[i][j];
+					}
+				}
+				
+				for (int i = 0; i < 8; i++) {
+					for (int j = 0; j < 8; j++) {
+						if (temp[i][j]!=black[i][j]) {
+							cntBlack++;
+						}
+					}
+				}
+				for (int i = 0; i < 8; i++) {
+					for (int j = 0; j < 8; j++) {
+						if (temp[i][j]!=white[i][j]) {
+							cntWhite++;
+						}
+					}
+				}
+
+				if (cntBlack < cntWhite) {
+					if (cntBlack < answer) {
+						answer = cntBlack;
+					}
+				} else {
+					if (cntWhite < answer) {
+						answer = cntWhite;
+					}
+				}
+				cntBlack = 0;
+				cntWhite = 0;
+			}
+		}
+
+		System.out.println(answer);
+
+	}
+
+}
