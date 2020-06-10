@@ -1,0 +1,31 @@
+import java.util.*;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		Scanner sc=new Scanner(System.in);
+		int n=Integer.parseInt(sc.nextLine());
+		
+		int cnt=0;
+		int answer=0;
+		int num=666;
+		
+		while(cnt<n) {
+			String chk=Integer.toString(num);
+			for(int i=0;i<chk.length()-2;i++) {
+				if(chk.charAt(i)=='6' && chk.charAt(i+1)=='6' && chk.charAt(i+2)=='6') {
+					answer=num;
+					cnt++;
+                    break;
+				}
+			}
+			
+			num++;
+		}
+		
+		System.out.println(answer);
+
+	}
+
+}
